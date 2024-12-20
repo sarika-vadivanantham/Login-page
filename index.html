@@ -2,56 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <style>
-        body{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; 
-            margin: 0;
-        }
+    <link rel="stylesheet" href="styles.css">
 
-        h1{
-            align-content: center;
-            font-size: 25px;
-            margin-bottom: 20px;
-        }
-         
-        input{
-            display: flex;
-            padding: 8px;
-            margin-bottom: 7px;
-            border-radius: 4px;
-            border: 1px solid #0c0505;
-            display: block; /* Ensure each input is on a new line */
-            margin-left: auto;
-            margin-right: auto; 
-        }
-
-        button{           
-            border-radius: 4px;
-            margin-left: 5%;
-            background-color: rgb(123, 172, 123);
-        }
-
-        .container {
-            background-color: rgb(228, 231, 222);
-            padding: 30px;
-            border-radius: 8px;
-            width: 100%; /* Make the container responsive */
-            max-width: 400px; /* Maximum width for the container */
-            text-align: center;
-        }
-
-        p{
-            display: none;
-        }
-
-    </style>
 </head>
+
 <body>
     <div class="container">
         <h1>You can login here</h1>
@@ -59,53 +16,13 @@
             <label for="username">Username:</label>
             <input type="email" id="username"/>
             <label for="password">Password:</label>
-            <input type="text" id="password"/>
-            <p type="text" id="usernameWarning"> Enter a valid email Id</p>
-            <p type="text" id="passwordWarning"> Password must contain minimum of 8 characters</p>
-            <button id="login"> Login </button>
+            <input type="password" id="password"/>
+            <p id="usernameWarning"> Enter a valid email Id</p>
+            <p id="passwordWarning"> Password must contain minimum of 8 characters</p>
+            <button type="submit" id="login"> Login </button>
         </form>
     </div>
 
-    <script>
-        const usernameWarning = document.getElementById("usernameWarning");
-        const passwordWarning =document.getElementById("passwordWarning");
-        const usernameInput = document.getElementById("username");
-        const passwordInput = document.getElementById("password");
-        const loginButton = document.getElementById('login');
-        const loginForm = document.getElementById('loginForm');
-
-        loginForm.addEventListener('submit', validate);
-
-        function validate(event) {
-
-            event.preventDefault();
-
-            const username = usernameInput.value.trim();
-            const password = passwordInput.value.trim();
-            const isValid = true;
-
-            if (!usernameInput.checkValidity()) {
-                usernameWarning.style.display = 'block';
-                isValid = false;
-            }
-            
-            if (password.length < 8) {
-                passwordWarning.style.display = 'block';
-                isValid = false;
-            } else {
-                passwordWarning.style.display = 'none';
-                passwordInput.value = '';
-            }
-
-            if (isValid) {
-                alert('Login successful!');
-                usernameInput.value = '';
-                passwordInput.value = '';
-            }
-        }
-    </script>
-
-    </script>
-
+    <script src="script.js"> </script>
 </body>
 </html>
