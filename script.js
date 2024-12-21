@@ -27,6 +27,7 @@ function validate(event) {
 }
 
 function validateUsername(username) {
+    // Email regex pattern
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     if (!emailRegex.test(username)) {
         usernameWarning.style.display = 'block';  // Show warning if email format is invalid
